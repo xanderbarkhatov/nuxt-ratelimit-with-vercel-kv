@@ -5,7 +5,7 @@ const { data, pending, refresh } = await useFetch("/api/ratelimit", {
 </script>
 
 <template>
-  <UContainer as="main" class="grid place-items-center gap-5 min-h-screen">
+  <UContainer as="main" class="min-h-screen py-6 grid place-items-center gap-5">
     <h1 class="text-4xl lg:text-7xl font-semibold text-center">
       <template v-if="data!.success">
         <p class="text-primary-500">Nuxt</p>
