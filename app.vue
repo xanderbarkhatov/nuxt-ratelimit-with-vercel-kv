@@ -37,5 +37,9 @@ const { data, pending, refresh } = await useFetch("/api/ratelimit", {
         {{ value }}
       </UCard>
     </div>
+
+    <UButton variant="link" to="https://github.com/xanderbarkhatov/nuxt-ratelimit-with-vercel-kv">
+      Source
+    </UButton>
   </UContainer>
 </template>
