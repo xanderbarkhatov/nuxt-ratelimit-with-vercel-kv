@@ -1,26 +1,29 @@
 <script setup lang="ts">
 const { data, pending, refresh } = await useFetch("/api/ratelimit", {
-  transform: (v) => ({ ...v, reset: new Date(v.reset).toUTCString() }),
+  transform: (v) => ({
+    ...v,
+    reset: new Date(v.reset).toUTCString(),
+  }),
 });
 </script>
 
 <template>
-  <UContainer as="main" class="min-h-screen py-6 grid place-items-center gap-5">
-    <h1 class="text-4xl lg:text-7xl font-semibold text-center">
-      <template v-if="data!.success">
+  <UContainer as="main" class="min-h-screen py-6 flex flex-col items-center justify-center gap-10">
+    <div class="flex items-center text-4xl lg:text-7xl h-52 lg:h-96 font-semibold text-center">
+      <div v-if="data.success">
         <p class="text-primary-500">Nuxt</p>
         +
         <p>@upstash/ratelimit</p>
         +
         <p>Vercel KV</p>
-      </template>
+      </div>
 
-      <template v-else>
+      <div v-else>
         You have reached the limit,
         <br />
         please come back later
-      </template>
-    </h1>
+      </div>
+    </div>
 
     <div>
       <UButton size="lg" :loading="pending" class="transition" @click="refresh()">Refresh</UButton>
