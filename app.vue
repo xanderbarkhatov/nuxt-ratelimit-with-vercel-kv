@@ -2,7 +2,7 @@
 const { data, pending, refresh } = await useFetch("/api/ratelimit", {
   transform: (v) => ({
     ...v,
-    reset: new Date(v.reset).toLocaleString(undefined, { dateStyle: "long", timeStyle: "medium" }),
+    reset: new Date(v.reset).toUTCString(),
   }),
 });
 </script>
