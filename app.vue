@@ -40,10 +40,7 @@ const { data, pending, refresh } = await useFetch("/api/ratelimit", {
       </UCard>
     </div>
 
-    <UButton
-      variant="link"
-      to="https://github.com/upstash/ratelimit/tree/main/examples/nuxt"
-      target="_blank"
+    <UButton variant="link" to="https://github.com/upstash/ratelimit/tree/main/examples/nuxt"
       >Source</UButton
     >
   </UContainer>
