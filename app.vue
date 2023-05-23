@@ -4,7 +4,7 @@ const { data, pending, refresh } = await useFetch("/api/ratelimit", {
     ...v,
     reset: new Date(v.reset).toUTCString(),
   }),
-});
+})
 </script>
 
 <template>
@@ -40,6 +40,11 @@ const { data, pending, refresh } = await useFetch("/api/ratelimit", {
       </UCard>
     </div>
 
-    <UButton variant="link" to="https://github.com/upstash/ratelimit/pull/51">Source</UButton>
+    <UButton
+      variant="link"
+      to="https://github.com/upstash/ratelimit/tree/main/examples/nuxt"
+      target="_blank"
+      >Source</UButton
+    >
   </UContainer>
 </template>
